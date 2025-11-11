@@ -1,4 +1,60 @@
 package com.FuturePath.FuturePath.model;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Modulo {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String titulo;
+    private String descricao;
+    private int capitulo;       // Episódio na sequência (1,2,3)
+    private String tipo;         // video, leitura, quiz
+    @ManyToOne
+    private Trilha trilha;
+
+    //construtor
+    public Modulo(String titulo, String descricao, int capitulo, String tipo, Trilha trilha) {
+        this.titulo = titulo;
+        this.descricao = descricao;
+        this.capitulo = capitulo;
+        this.tipo = tipo;
+        this.trilha = trilha;
+    }
+
+    //getters e setters
+    public Long getId() {
+        return id;
+    }
+    public String getTitulo() {
+        return titulo;
+    }
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+    public String getDescricao() {
+        return descricao;
+    }
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+    public int getCapitulo() {
+        return capitulo;
+    }
+    public void setCapitulo(int capitulo) {
+        this.capitulo = capitulo;
+    }
+    public String getTipo() {
+        return tipo;
+    }
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+    public Trilha getTrilha() {
+        return trilha;
+    }
+    public void setTrilha(Trilha trilha) {
+        this.trilha = trilha;
+    }
 }
