@@ -1,0 +1,13 @@
+package com.FuturePath.FuturePath;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class FuturePathApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
