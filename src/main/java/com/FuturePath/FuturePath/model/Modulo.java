@@ -1,15 +1,21 @@
 package com.FuturePath.FuturePath.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
 
 @Entity
 public class Modulo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank
     private String titulo;
+    @NotBlank
     private String descricao;
-    private int capitulo;       // Episódio na sequência (1,2,3)
+    @Positive
+    private int capitulo;// Episódio na sequência (1,2,3)
+    @NotBlank
     private String tipo;         // video, leitura, quiz
     @ManyToOne
     private Trilha trilha;

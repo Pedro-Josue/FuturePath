@@ -4,21 +4,25 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nome;
-    private String email;
+    @NotBlank
+    private String login;
+    @NotBlank
+    @Size(min = 6, message = "A senha deve ter pelo menos 6 caracteres")
     private String senha;
+    @NotBlank
     private String ocupacaoAtual;
 
     //construtor
-    public Usuario(String nome, String email, String senha, String ocupacaoAtual) {
-        this.nome = nome;
-        this.email = email;
+    public Usuario(String login, String senha, String ocupacaoAtual) {
+        this.login = login;
         this.senha = senha;
         this.ocupacaoAtual = ocupacaoAtual;
     }
@@ -27,17 +31,12 @@ public class Usuario {
     public Long getId() {
         return id;
     }
-    public String getNome() {
-        return nome;
+
+    public String getLogin() {
+        return login;
     }
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-    public String getEmail() {
-        return email;
-    }
-    public void setEmail(String email) {
-        this.email = email;
+    public void setLogin(String login) {
+        this.login = login;
     }
     public String getSenha() {
         return senha;

@@ -1,6 +1,8 @@
 package com.FuturePath.FuturePath.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.List;
 
@@ -9,9 +11,13 @@ public class Trilha {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank
     private String titulo;
+    @NotBlank
     private String descricao;
+    @NotBlank
     private String area;
+    @NotNull
     private Integer cargaHoraria;
     @OneToMany(mappedBy = "trilha", cascade = CascadeType.ALL)
     private List<Modulo> modulos;
