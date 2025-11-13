@@ -1,5 +1,6 @@
 package com.FuturePath.FuturePath.service;
 
+import com.FuturePath.FuturePath.exception.UsuarioNaoEncontradoException;
 import com.FuturePath.FuturePath.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,6 +15,10 @@ public class AutenticacaoService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return usuarioRepository.findByLogin(username);
+        var usuarioExistente = usuarioRepository.findByLogin(username);
+        if (usuarioExistente == null) {
+            throw new UsuarioNaoEncontradoException("Usuário não encontrado: ");
+        }
+        return usuarioExistente;
     }
 }

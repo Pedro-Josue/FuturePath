@@ -1,6 +1,9 @@
 package com.FuturePath.FuturePath.controller;
 
+import com.FuturePath.FuturePath.exception.CredenciaisInvalidasException;
+import com.FuturePath.FuturePath.exception.UsuarioNaoEncontradoException;
 import com.FuturePath.FuturePath.model.Usuario;
+import com.FuturePath.FuturePath.repository.UsuarioRepository;
 import com.FuturePath.FuturePath.security.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -23,11 +26,18 @@ public class AutenticacaoController {
     private AuthenticationManager authenticationManager;
     @Autowired
     private TokenService tokenService;
+    @Autowired
+    private UsuarioRepository usuarioRepository;
 
     @PostMapping
     public ResponseEntity<?> logar(@RequestBody Map<String, String> body){
         String login = body.get("login");
         String senha = body.get("senha");
+
+        var usuarioExistente = usuarioRepository.findByLogin(login);
+        if (usuarioExistente == null) {
+            throw new UsuarioNaoEncontradoException("Usuário não encontrado: " + login);
+        }
 
         try {
             var token = new UsernamePasswordAuthenticationToken(login, senha);
@@ -38,7 +48,7 @@ public class AutenticacaoController {
             resposta.put("token", JWT);
             return ResponseEntity.ok(resposta);
         } catch (AuthenticationException e) {
-            return ResponseEntity.status(401).body("Credenciais inválidas");
+            throw new CredenciaisInvalidasException("Login ou senha incorretos!");
         }
 
     }

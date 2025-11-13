@@ -1,5 +1,6 @@
 package com.FuturePath.FuturePath.service;
 
+import com.FuturePath.FuturePath.exception.CredenciaisInvalidasException;
 import com.FuturePath.FuturePath.model.Usuario;
 import com.FuturePath.FuturePath.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,10 @@ public class UsuarioService {
     private PasswordEncoder passwordEncoder;
 
     public ResponseEntity<String> criaUsuario(Usuario usuario) {
+        if (usuarioRepository.findByLogin(usuario.getLogin()) != null) {
+            return ResponseEntity.status(400).body("Login já cadastrado no sistema");
+        }
+
         String senhaCriptografada = passwordEncoder.encode(usuario.getSenha());
         usuario.setSenha(senhaCriptografada);
         usuarioRepository.save(usuario);
