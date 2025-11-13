@@ -1,5 +1,6 @@
 package com.FuturePath.FuturePath.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
@@ -18,6 +19,7 @@ public class Modulo {
     @NotBlank
     private String tipo;         // video, leitura, quiz
     @ManyToOne
+    @JsonBackReference
     private Trilha trilha;
 
     //construtor

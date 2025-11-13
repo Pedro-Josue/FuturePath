@@ -13,8 +13,8 @@ VALUES
 -- TRILHAS E MÓDULOS
 
 -- TRILHA 1: Inteligência Artificial e Ética no Trabalho
-INSERT INTO trilha (id, titulo, descricao, area, carga_horaria)
-VALUES (1, 'Inteligência Artificial e Ética no Trabalho',
+INSERT INTO trilha (titulo, descricao, area, carga_horaria)
+VALUES ('Inteligência Artificial e Ética no Trabalho',
  'Entenda o impacto da IA nas profissões e como aplicá-la de forma responsável no ambiente corporativo.',
  'Tecnologia e Ética Digital', 35);
 
@@ -25,8 +25,8 @@ VALUES
 ('Desafio Ético: Decisões Automatizadas', 'Atividade prática de reflexão sobre IA e ética.', 3, 'quiz', 1);
 
 -- TRILHA 2: Automação e Indústria 4.0
-INSERT INTO trilha (id, titulo, descricao, area, carga_horaria)
-VALUES (2, 'Automação e Indústria 4.0',
+INSERT INTO trilha (titulo, descricao, area, carga_horaria)
+VALUES ('Automação e Indústria 4.0',
  'Aprenda sobre sistemas automatizados, IoT e robótica, e como eles estão moldando o futuro do trabalho.',
  'Engenharia e Automação', 40);
 
@@ -37,8 +37,8 @@ VALUES
 ('Case Prático: Linha de Produção Inteligente', 'Estudo de caso sobre automação na indústria.', 3, 'leitura', 2);
 
 -- TRILHA 3: Análise de Dados e Tomada de Decisão
-INSERT INTO trilha (id, titulo, descricao, area, carga_horaria)
-VALUES (3, 'Análise de Dados e Tomada de Decisão',
+INSERT INTO trilha (titulo, descricao, area, carga_horaria)
+VALUES ('Análise de Dados e Tomada de Decisão',
  'Desenvolva competências em análise de dados para embasar decisões estratégicas nas empresas do futuro.',
  'Ciência de Dados', 45);
 
@@ -49,8 +49,8 @@ VALUES
 ('Projeto Prático: Tomada de Decisão Baseada em Dados', 'Desafio final com dataset real.', 3, 'quiz', 3);
 
 -- TRILHA 4: Soft Skills para a Era Digital
-INSERT INTO trilha (id, titulo, descricao, area, carga_horaria)
-VALUES (4, 'Soft Skills para a Era Digital',
+INSERT INTO trilha (titulo, descricao, area, carga_horaria)
+VALUES ('Soft Skills para a Era Digital',
  'Aprimore suas habilidades humanas: comunicação, empatia, colaboração e pensamento crítico.',
  'Desenvolvimento Humano', 25);
 
@@ -61,8 +61,8 @@ VALUES
 ('Autogestão e Resiliência', 'Atividade prática para desenvolvimento pessoal.', 3, 'quiz', 4);
 
 -- TRILHA 5: Trabalho Híbrido e Gestão Remota
-INSERT INTO trilha (id, titulo, descricao, area, carga_horaria)
-VALUES (5, 'Trabalho Híbrido e Gestão Remota',
+INSERT INTO trilha (titulo, descricao, area, carga_horaria)
+VALUES ('Trabalho Híbrido e Gestão Remota',
  'Descubra como liderar e colaborar em ambientes híbridos e remotos de maneira produtiva.',
  'Gestão e Inovação', 30);
 

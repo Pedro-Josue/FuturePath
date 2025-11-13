@@ -1,5 +1,6 @@
 package com.FuturePath.FuturePath.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -20,6 +21,7 @@ public class Trilha {
     @NotNull
     private Integer cargaHoraria;
     @OneToMany(mappedBy = "trilha", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Modulo> modulos;
 
     //construtor
