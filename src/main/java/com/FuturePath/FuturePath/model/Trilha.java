@@ -31,6 +31,10 @@ public class Trilha {
         this.modulos = modulos;
     }
 
+    //construtor default
+    public Trilha() {
+    }
+
     //getters e setters
     public Long getId() {
         return id;

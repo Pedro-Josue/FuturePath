@@ -29,6 +29,10 @@ public class Modulo {
         this.trilha = trilha;
     }
 
+    //construtor default
+    public Modulo() {
+    }
+
     //getters e setters
     public Long getId() {
         return id;

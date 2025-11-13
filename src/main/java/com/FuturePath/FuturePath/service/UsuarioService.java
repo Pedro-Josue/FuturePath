@@ -1,11 +1,23 @@
 package com.FuturePath.FuturePath.service;
 
+import com.FuturePath.FuturePath.model.Usuario;
 import com.FuturePath.FuturePath.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UsuarioService {
     @Autowired
-    private UsuarioRepository UsuarioRepository;
+    private UsuarioRepository usuarioRepository;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+    public ResponseEntity<String> criaUsuario(Usuario usuario) {
+        String senhaCriptografada = passwordEncoder.encode(usuario.getSenha());
+        usuario.setSenha(senhaCriptografada);
+        usuarioRepository.save(usuario);
+        return ResponseEntity.status(201).body("Usuario criado com sucesso!");
+    }
 }

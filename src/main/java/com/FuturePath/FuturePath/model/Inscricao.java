@@ -28,6 +28,10 @@ public class Inscricao {
     @PositiveOrZero
     private Integer progresso = 0; // porcentagem (0-100)
 
+    //construtor default
+    public Inscricao() {
+    }
+
     //construtor
     public Inscricao(Usuario usuario, Trilha trilha, LocalDate dataInscricao, String status, Integer progresso) {
         this.usuario = usuario;
