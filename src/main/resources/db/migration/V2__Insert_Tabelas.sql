@@ -3,11 +3,12 @@
 
 INSERT INTO usuario (login, senha, ocupacao_atual)
 VALUES
-('carla.santos', '$2a$10$5RvgLR0oC6pIZ9HAFW5C8ubim3hzS/E9J1APxP02CGmIkhECij54W', 'Analista Administrativo'), -- senha123
-('rodrigo.melo', '$2a$10$K7yDFlMck0BLlkfqE1LkOeMc.OBz/xElxvHrW4UG5bl2YqCOOKlPa', 'Engenheiro de Produção'), -- 123456
-('julia.lima', '$2a$10$8wXYcMPaEoTkfZDTK1uKBumKtOmHbboFAyHkGG8bBhgGeE8vuRhUO', 'Estudante de TI'), --segura456
-('marcos.tavares', '$2a$10$eB6PE1eWPCfrqKHtD5/4CeWTIMeS1KDoOAY1am5Z50TG0X.3aX2DC', 'Técnico em Manutenção Industrial'), --abc123
-('fernanda.oliveira', '$2a$10$1Bfa2DFBz70l9RbOZnfr6u1JHuwBo4vEXOaR7Izfq1gYzFUpYk8jy', 'Professora de Matemática'); --senha789
+--A senha de todos os usuários é 123456 criptografada com bcrypt
+('carla.santos', '$2a$10$23qHytKmefN8WUAPJblCkOlygpDKX.5fLlEjJg0Awe/0LKJl/Kmtq', 'Analista Administrativo'),
+('rodrigo.melo', '$2a$10$23qHytKmefN8WUAPJblCkOlygpDKX.5fLlEjJg0Awe/0LKJl/Kmtq', 'Engenheiro de Produção'),
+('julia.lima', '$2a$10$23qHytKmefN8WUAPJblCkOlygpDKX.5fLlEjJg0Awe/0LKJl/Kmtq', 'Estudante de TI'),
+('marcos.tavares', '$2a$10$23qHytKmefN8WUAPJblCkOlygpDKX.5fLlEjJg0Awe/0LKJl/Kmtq', 'Técnico em Manutenção Industrial'),
+('fernanda.oliveira', '$2a$10$23qHytKmefN8WUAPJblCkOlygpDKX.5fLlEjJg0Awe/0LKJl/Kmtq', 'Professora de Matemática');
 
 
 -- TRILHAS E MÓDULOS
